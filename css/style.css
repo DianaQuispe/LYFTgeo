@@ -1,0 +1,28 @@
+#logo {
+    display: block;
+    width: 25%;
+    height: 25%;
+    position: relative;
+    top: 10em;
+    left: 38%;
+}
+
+* {
+    outline: 2px solid red;
+}
+
+#fondo {
+    position: absolute;
+    background-image: url('../images/cropped-Lyft-Promo-Codes-car-1.jpg');
+    background-position: center;
+    background-size: contain;
+}
+
+#btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 24%;
+    left: 4%;
+}
