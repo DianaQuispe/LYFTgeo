@@ -1,9 +1,9 @@
 #logo {
-    display: block;
+    display: grid;
     width: 25%;
     height: 25%;
     position: relative;
-    top: 10em;
+    top: 13em;
     left: 38%;
 }
 
@@ -11,18 +11,42 @@
     outline: 2px solid red;
 }
 
+body {
+    background: #ffaf4b;
+    background: -moz-linear-gradient(left, #ffaf4b 0%, #0029f5 18%, #6ef500 30%, #e5f500 42%, #9b00f5 60%, #00f5c4 73%, #00f541 85%, #f50031 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #ffaf4b), color-stop(18%, #0029f5), color-stop(30%, #6ef500), color-stop(42%, #e5f500), color-stop(60%, #9b00f5), color-stop(73%, #00f5c4), color-stop(85%, #00f541), color-stop(100%, #f50031));
+    background: -webkit-linear-gradient(left, #ffaf4b 0%, #0029f5 18%, #6ef500 30%, #e5f500 42%, #9b00f5 60%, #00f5c4 73%, #00f541 85%, #f50031 100%);
+    background: -o-linear-gradient(left, #ffaf4b 0%, #0029f5 18%, #6ef500 30%, #e5f500 42%, #9b00f5 60%, #00f5c4 73%, #00f541 85%, #f50031 100%);
+    background: -ms-linear-gradient(left, #ffaf4b 0%, #0029f5 18%, #6ef500 30%, #e5f500 42%, #9b00f5 60%, #00f5c4 73%, #00f541 85%, #f50031 100%);
+    background: linear-gradient(to right, #ffaf4b 0%, #0029f5 18%, #6ef500 30%, #e5f500 42%, #9b00f5 60%, #00f5c4 73%, #00f541 85%, #f50031 100%);
+}
+
 #fondo {
     position: absolute;
-    background-image: url('../images/cropped-Lyft-Promo-Codes-car-1.jpg');
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #btns {
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-around;
     position: absolute;
     bottom: 24%;
     left: 4%;
+}
+
+html2 {
+    background-image: url(../images/ciudad.jpg);
+    position: relative;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.nextBtn {
+    width: 50px;
+    height: 50px;
+    background-color: aqua;
 }
