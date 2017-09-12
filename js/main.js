@@ -1,97 +1,71 @@
-$(document).ready(function () {
-    $('#contactForm')
-        .find('[name="phoneNumber"]')
-        .intlTelInput({
-            utilsScript: '/vendor/intl-tel-input/lib/libphonenumber/build/utils.js',
-            autoPlaceholder: true,
-            preferredCountries: ['fr', 'us', 'gb']
-        });
-
-    $('#contactForm').formValidation({
-            framework: 'bootstrap',
-            icon: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-                phoneNumber: {
-                    validators: {
-                        callback: {
-                            message: 'The phone number is not valid',
-                            callback: function (value, validator, $field) {
-                                return value === '' || $field.intlTelInput('isValidNumber');
-                            }
-                        }
-                    }
-                }
-            }
-        })
-        // Revalidate the number when changing the country
-        .on('click', '.country-list', function () {
-            $('#contactForm').formValidation('revalidateField', 'phoneNumber');
-            alert($('#contactForm'));
-        });
-    $('#contact_form').bootstrapValidator({
-            // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-            feedbackIcons: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-                first_name: {
-                    validators: {
-                        stringLength: {
-                            min: 2,
-                        },
-                        notEmpty: {
-                            message: 'Please supply your first name'
-                        }
-                    }
-                },
-
-                email: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Please supply your email address'
-                        },
-                        emailAddress: {
-                            message: 'Please supply a valid email address'
-                        }
-                    }
-                },
-
-            }
-        })
-        .on('success.form.bv', function (e) {
-            $('#success_message').slideDown({
-                opacity: "show"
-            }, "slow") // Do something ...
-            $('#contact_form').data('bootstrapValidator').resetForm();
-
-            // Prevent form submission
-            e.preventDefault();
-
-            // Get the form instance
-            var $form = $(e.target);
-
-            // Get the BootstrapValidator instance
-            var bv = $form.data('bootstrapValidator');
-
-            // Use Ajax to submit form data
-            $.post($form.attr('action'), $form.serialize(), function (result) {
-                console.log(result);
-            }, 'json');
-        });
-});
 $('#next').click(function () {
     var divNext = document.createElement('div');
     divNext.addClass('nextBtn');
     $('#nextDiv').append(divNext);
     alert('g');
 })
-
 $(document).ready(function () {
+    // Define new validator
+    formValidation.Validator.intPhoneNumber = {
+        html5Attributes: {
+            message: 'message',
+            autoplaceholder: 'autoPlaceholder',
+            preferredcountries: 'preferredCountries',
+            utilsscript: 'utilsScript'
+        },
 
+        init: function (validator, $field, options) {
+            // Determine the preferred countries
+            var autoPlaceholder = options.autoPlaceholder === true || options.autoPlaceholder === 'true',
+                preferredCountries = options.preferredCountries || 'us';
+            if ('string' === typeof preferredCountries) {
+                preferredCountries = preferredCountries.split(',');
+            }
+
+            // Attach the intlTelInput on field
+            $field.intlTelInput({
+                utilsScript: options.utilsScript || '',
+                autoPlaceholder: autoPlaceholder,
+                preferredCountries: preferredCountries
+            });
+
+            // Revalidate the field when changing the country
+            var $form = validator.getForm(),
+                fieldName = $field.attr('data-fv-field');
+            $form.on('click.country.intphonenumber', '.country-list', function () {
+                $form.formValidation('revalidateField', fieldName);
+            });
+        },
+
+        destroy: function (validator, $field, options) {
+            $field.intlTelInput('destroy');
+
+            validator.getForm().off('click.country.intphonenumber');
+        },
+
+        validate: function (validator, $field, options) {
+            return $field.val() === '' || $field.intlTelInput('isValidNumber');
+        }
+    };
+
+    $('#contactForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            phoneNumber: {
+                validators: {
+                    intPhoneNumber: {
+                        utilsScript: '/vendor/intl-tel-input/lib/libphonenumber/build/utils.js',
+                        autoPlaceholder: true,
+                        preferredCountries: 'fr,us,gb',
+                        message: 'The phone number is not valid'
+                    }
+                }
+            }
+        }
+    });
 });
