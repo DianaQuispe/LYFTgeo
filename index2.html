@@ -10,39 +10,42 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="intl-tel-input/build/css/intlTelInput.css" />
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style1.css">
     <title>Document</title>
 </head>
 
 <body>
     <div class="container">
-<form name="fvalida">
-<table>
-<tr>
-    <td>Nombre: </td>
-    <td><input type="text" name="nombre" size="30" maxlength="100"></td>
-</tr>
-<tr>
-    <td>Edad: </td>
-    <td><input type="text" name="edad" size="3" maxlength="2"></td>
-</tr>
-<tr>
-    <td>Interés:</td>
-    <td>
-    <select name=interes>
-    <option value="Elegir">Elegir
-    <option value="Comercial">Contacto comercial
-    <option value="Clientes">Atención al cliente
-    <option value="Proveedores">Contacto de proveedores
-    </select>
-    </td>
-</tr>
-<tr>
-    <td colspan="2" align="center"><input type="button" value="Enviar" onclick="valida_envia()"></td>
-</tr>
-</table>
-<div>http://reactiveraven.github.io/jqBootstrapValidation/</div>
-</form>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="fluid-container text-center">
+                    <form class="form-horizontal">
+                        <h2><b><a href=""> </a> Sign up</b></h2>
+                        <p>We'll send a text to verify your phone</p>
+
+                        <hr>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="email" type="email" class="form-control" name="email" placeholder="Name">
+                        </div> <br>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input id="email" type="email" class="form-control" name="email" placeholder="Correo">
+                        </div><br>
+                        <li class="list-group-item">
+                            I agree to Lyfts
+                            <font color="blue">Terms of service</font>
+                            <div class="material-switch pull-right">
+                                <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox" />
+                                <label for="someSwitchOptionSuccess" class="label-success"></label>
+                            </div>
+                        </li>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
 
 
     </div>
@@ -52,7 +55,10 @@
     <a id="next" class="btn btn-info btn-block" href="geolocalizacion/index.html">NEXT</a>
     <div id="nextDiv1"></div>
 
-<script src="js/main1.js"> </script>
+    <script src="js/main1.js">
+
+
+    </script>
 </body>
 
 </html>

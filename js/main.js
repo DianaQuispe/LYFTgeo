@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $('#contactForm')
         .find('[name="phoneNumber"]')
