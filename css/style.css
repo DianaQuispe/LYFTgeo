@@ -15,20 +15,11 @@
 body {
     width: 100%;
     height: 100%;
-    background: #ffaf4b;
-    background: -moz-linear-gradient(left, #ffaf4b 0%, #0029f5 18%, #6ef500 30%, #e5f500 42%, #9b00f5 60%, #00f5c4 73%, #00f541 85%, #f50031 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, #ffaf4b), color-stop(18%, #0029f5), color-stop(30%, #6ef500), color-stop(42%, #e5f500), color-stop(60%, #9b00f5), color-stop(73%, #00f5c4), color-stop(85%, #00f541), color-stop(100%, #f50031));
-    background: -webkit-linear-gradient(left, #ffaf4b 0%, #0029f5 18%, #6ef500 30%, #e5f500 42%, #9b00f5 60%, #00f5c4 73%, #00f541 85%, #f50031 100%);
-    background: -o-linear-gradient(left, #ffaf4b 0%, #0029f5 18%, #6ef500 30%, #e5f500 42%, #9b00f5 60%, #00f5c4 73%, #00f541 85%, #f50031 100%);
-    background: -ms-linear-gradient(left, #ffaf4b 0%, #0029f5 18%, #6ef500 30%, #e5f500 42%, #9b00f5 60%, #00f5c4 73%, #00f541 85%, #f50031 100%);
-    background: linear-gradient(to right, #ffaf4b 0%, #0029f5 18%, #6ef500 30%, #e5f500 42%, #9b00f5 60%, #00f5c4 73%, #00f541 85%, #f50031 100%);
+
 }
 
 #fondo {
-    position: absolute;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    margin: 0 auto;
 }
 
 #btns {
@@ -44,16 +35,14 @@ body {
 #btns a {
     padding: 1%;
     font-size: 1.7em;
-    background-color: #0029f5;
+    background-color: rgba(188, 0, 245, 0.7);
     border-color: transparent;
+    color: aliceblue;
 }
 
-html2 {
-    background-image: url(../images/ciudad.jpg);
-    position: relative;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+.html2 {
+
+    color: #08131d;
 }
 
 .nextBtn {
@@ -61,3 +50,4 @@ html2 {
     height: 50px;
     background-color: aqua;
 }
+

@@ -1,9 +1,4 @@
-$('#next').click(function () {
-    var divNext = document.createElement('div');
-    divNext.addClass('nextBtn');
-    $('#nextDiv').append(divNext);
-    alert('g');
-})
+
 $(document).ready(function () {
     $('#contactForm')
         .find('[name="phoneNumber"]')

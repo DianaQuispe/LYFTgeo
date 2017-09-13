@@ -1,64 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="BootstrapFormHelpers/dist/css/bootstrap-formhelpers.min.css">
-    <link rel="stylesheet" href="BootstrapFormHelpers/dist/css/bootstrap-formhelpers.css">
-    <link rel="stylesheet" href="intl-tel-input/build/css/intlTelInput.css" />
-    <script src="intl-tel-input/build/js/utils.js">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="intl-tel-input/build/css/intlTelInput.css" />
+        <script src="intl-tel-input/build/js/utils.js">
 
 
-    </script>
-    <link rel="stylesheet" href="intl-tel-input/build/css/demo.css">
+        </script>
+        <link rel="stylesheet" href="intl-tel-input/build/css/demo.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Document</title>
+    </head>
+    <style>
 
+    </style>
+    <body background ="images/fondo1.jpg">
 
+        <div class="html2 fluid-container text-center">
+            <h2><b><a href=""> </a> Sign up</b></h2>
+            <p>We'll send a text to verify your phone</p>
+            <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
+            </div>
+            <hr>
+            <div>
+                <div class="row">
+                    <form id="contactForm" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">Phone number</label>
+                            <div class="col-xs-5">
+                                <input type="tel" class="form-control" name="phoneNumber" />
+                            </div>
+                            <div class="col-xs-5">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                   Obtener codigo <b>LAB</b>
+                                </button>
 
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">CODIGO LAB</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="numAl modal-body">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-</head>
-
-<body>
-
-    <br><br>
-    <div class="html2 container text-center">
-
-        <h2><b><a href=""> </a> Sign up</b></h2>
-        <p>We'll send a text to verify your phone</p>
-        <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
-        </div>
-        <hr>
-        <div>
-            <form id="contactForm" class="form-horizontal">
-                <div class="form-group">
-                    <label class="col-xs-3 control-label">Phone number</label>
-                    <div class="col-xs-5">
-                        <input type="tel" class="form-control" name="phoneNumber" />
-                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
+            <p>Join now for free ride credit</p>
+            <a id="next" class="btn btn-info btn-block" href="index2.html">NEXT</a>
+            <div id="nextDiv"></div>
         </div>
+        <script src="intl-tel-input/build/js/intlTelInput.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/main1.js"></script>
 
-        <p>Join now for free ride credit</p>
-        <a id="next" class="btn btn-info btn-block" href="index2.html">NEXT</a>
-        <div id="nextDiv"></div>
 
-
-    </div>
-    <select id="countries_phone1" class="form-control bfh-countries" data-country="PE"></select>
-    <br><br>
-    <input type="text" class="form-control bfh-phone" data-country="countries_phone1">
-    <script src="BootstrapFormHelpers/dist/js/bootstrap-formhelpers.js"></script>
-    <script src="BootstrapFormHelpers/dist/js/bootstrap-formhelpers.min.js"></script>
-    <script src="intl-tel-input/build/js/intlTelInput.min.js"></script>
-    <script src="js/main.js"></script>
-
-</body>
+    </body>
 
 </html>
