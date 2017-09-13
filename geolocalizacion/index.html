@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Easy Vreco</title>
@@ -12,12 +13,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!--CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <style>
+        #fixDiv {
+            position: absolute;
+            background-color: aliceblue;
+            width: 100%;
+            height: 60px;
+            display: fixed;
+            z-index: 1;
+        }
+    </style>
 </head>
+
 <body>
     <section class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3">
-                <button id="encuentrame" class="btn btn-success"><i class="fa fa-user" aria-hidden="true"></i> Encuéntrame</button>
+                <button id="encuentrame" class="btn btn-success"><i class="fa fa-user" aria-hidden="true"></i></button>
             </div>
             <div class="col-md-3 col-sm-3">
                 <div class="form-group">
@@ -25,22 +37,29 @@
                     <input type="text" id="origen" name="origen" placeholder="Introduce una ubicación" class="form-control">
                 </div>
             </div>
-            <div class="col-md-3 col-sm-3">
-                <div class="form-group">
-                    <label for="destino">Destino:</label>
-                    <input type="text" id="destino" name="destino" placeholder="Introduce una ubicación" class="form-control">
-                </div>
-            </div>
+
             <div class="col-md-3 col-sm-3">
                 <button id="ruta" class="btn btn-success"><i class="fa fa-bicycle" aria-hidden="true"></i> Ruta</button>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 col-sm-12" id="map">
+
                 <!-- Aqui ira nuestro mapa -->
             </div>
+            <div id="fixDiv">
+                <div class="col-md-3 col-sm-3">
+                    <div class="form-group">
+                        <label for="destino">Destino:</label>
+                        <input type="text" id="destino" name="destino" placeholder="Introduce una ubicación" class="form-control">
+                    </div>
+                </div>
+            </div>
         </div>
+
     </section>
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!--MAPA-->
@@ -50,6 +69,7 @@
     <script src="https://use.fontawesome.com/1625bb79ec.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDj_W1ZaIS_DRBNaqkYH6c9V2XZPdG743Y&callback=initMap&libraries=places"></script>
-    
+
 </body>
+
 </html>
